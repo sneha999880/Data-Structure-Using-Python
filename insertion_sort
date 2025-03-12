@@ -1,0 +1,16 @@
+#insertion sort
+def insertion(list):
+    size=len(list)
+    for i in range(1,size-1):
+        temp=list[i]
+        j=i-1
+        while temp<list[j] and j>=0:
+            list[j+1]=list[j]
+            j=j-1
+        list[j+1]=temp
+    return list
+n=int(input('Enter number of elements'))
+list=[]
+for i in range(n):
+    list.append(int(input('enter elements')))
+print(insertion(list))
