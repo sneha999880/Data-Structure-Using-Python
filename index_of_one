@@ -1,0 +1,13 @@
+import numpy as np
+arr = np.array([0,0,1,1,0,1,1,0,1,0,1])
+def last_index_of_one(arr):
+    # Initialize index to -1
+    index = -1
+    # Traverse the array
+    for i in range(len(arr)):
+        if arr[i] == 1:
+            index = i # Update the index when '1' is found
+            # Return the last index of '1'
+return index_of_1.ipynb
+Result = last_index_of_one(arr)
+print("index of 1 is",Result)
