@@ -1,0 +1,8 @@
+num=[(2,5),(1,2),(4,4),(2,3)]
+size=len(num)
+for i in range(0,size):
+    for j in range(0,size-i-1):
+        if num[j][1]>num[j+1][1]:
+            num[j],num[j+1]=num[j+1],num[j]
+
+print('After sorting',num)
