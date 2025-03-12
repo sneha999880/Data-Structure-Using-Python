@@ -1,0 +1,12 @@
+def TowerOfHanoi(n , s_pole, d_pole, i_pole):
+    if n == 1:
+        return 1  # Base case: Moving one disk takes one move
+    moves = 0
+    moves += TowerOfHanoi(n-1, s_pole, i_pole, d_pole)  # Move n-1 disks to auxiliary pole
+    moves += 1  # Move the largest disk to the destination pole
+    moves += TowerOfHanoi(n-1, i_pole, d_pole, s_pole)  # Move n-1 disks from auxiliary to destination pole
+    return moves
+
+n = 3
+total_moves = TowerOfHanoi(n, 'A', 'C', 'B') # A, C, B are the name of poles
+print("Total moves:", total_moves)
