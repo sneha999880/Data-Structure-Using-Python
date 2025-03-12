@@ -1,0 +1,23 @@
+def binary_search(sorted_list, key):
+    low = 0
+    high = len(sorted_list) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if sorted_list[mid] == key:
+            return mid  
+        elif key < sorted_list[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1
+n=int(input('Enter number of element :'))
+lst=[]
+for i in range(n):
+    num=int(input('enter element'))
+    lst.append(num)
+key=int(input('seaching element'))
+position=binary_search(lst,key)
+if position ==-1:
+    print('element not found')
+else:
+    print('{} element found at position {}'.format(key,position))
