@@ -1,0 +1,21 @@
+#user input without function
+# Initialize the size of an array to 'n'
+n = int(input("Enter the size of the array: "))
+
+# Scan the array of 'n' integers
+arr = list(map(int, input(f"Enter {n} integers separated by spaces: ").split()))
+
+# Create a new array as 'prod_arr' to store new elements
+prod_arr = []
+
+# For any element in the array, the new element is the product of the remaining elements
+for i in range(n):
+    product = 1
+    for j in range(n):
+        if i != j:  # Exclude the current element
+            product *= arr[j]
+    prod_arr.append(product)
+
+# Print the resulting product array
+print("the product is of all number except that particular index during iterations")
+print("The product array is:", prod_arr)
