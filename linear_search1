@@ -1,0 +1,19 @@
+def linear_search(lst, key):
+    index = 0
+    while index < len(lst):
+        if lst[index] == key:
+            return index  
+        index += 1  
+    return -1
+
+
+
+numbers = [1, 2, 3, 4, 5]
+key_to_find = 3
+
+result = linear_search(numbers, key_to_find)
+
+if result != -1:
+    print(f'Key found at index: {result}')
+else:
+    print('Key not found in the list.')
