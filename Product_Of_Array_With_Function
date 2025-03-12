@@ -1,0 +1,24 @@
+
+#with function
+def productExceptSelf(arr):
+    n = len(arr)
+    # Initialize the result list as 1
+    res = [1] * n
+    for i in range(n):
+        # Compute the product of all except arr[i]
+        for j in range(n):
+            if i != j:
+                res[i] *= arr[j]
+    return res
+
+# Input array
+arr = [1, 2, 3, 4, 5]
+print("Original Array:", arr)
+
+# Calculate the special product array
+result = productExceptSelf(arr)
+print("Product Array:", result)
+
+
+Original Array: [1, 2, 3, 4, 5]
+Product Array: [120, 60, 40, 30, 24]
