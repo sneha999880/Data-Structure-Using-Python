@@ -1,0 +1,25 @@
+def bubble_sort_with_swaps(arr):
+    n = len(arr)
+    swaps = [0] * n
+
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+                swaps[j] += 1
+                swaps[j + 1] += 1
+
+    return arr, swaps
+
+# Input array
+arr = [10,20,30,20,10,0,40,70,20]
+sorted_arr, swap_counts = bubble_sort_with_swaps(arr)
+print("Sorted Array (Ascending):", sorted_arr)
+print("Number of Swaps for Each Element:", swap_counts)
+
+
+
+
+
