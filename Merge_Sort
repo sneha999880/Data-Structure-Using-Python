@@ -1,0 +1,32 @@
+def merge_list(arr,lst,lend,rst,rend):
+    temp=[]
+    i=lst
+    j=lst
+    while i<=lend and j<=rend:
+        if arr[i] < arr[j]:
+            temp.append(arr[i])
+            i=i+1
+        else:
+            temp.append(arr[j])
+            j+=1
+    while i<=lend:
+        temp.append(arr[i])
+        i+=1
+    while j<=lend:
+        temp.append(arr[j])
+        j+=1
+    for i in range(lst,rend + 1):
+        arr[i]=temp[i-lst]
+def mergesort(arr,left,right):
+    if left<right:
+        mid=(left+right)//2
+        mergesort(arr,left,mid)
+        mergesort(arr,mid+1,right)
+        merge_list(arr,left,mid,mid+1,right)
+arr=[]
+n=int(input('Enter number of elements'))
+for i in range(n):
+    arr.append(int(input('Enter element')))
+print("orginal array ",arr)
+mergesort(arr,0,n-1)
+print("Sorted array ",arr)
