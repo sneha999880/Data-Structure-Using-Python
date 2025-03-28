@@ -1,0 +1,8 @@
+import numpy as np
+
+x = np.array([3, 4, 6, 8, 9, 2, 5,8, 7])
+
+def remove_duplicates(arr):
+    return np.array(list(set(arr)))  
+result = remove_duplicates(x)
+print(result)
