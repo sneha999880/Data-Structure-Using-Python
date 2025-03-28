@@ -1,0 +1,18 @@
+import numpy as np
+
+x1 = np.array([1, 2, 3, 4, 5, 6])
+x2 = np.array([4, 5, 6, 7, 8, 9])
+
+def array_intersection(x1, x2):
+    new_arr = []
+    for i in x1:
+        if i in x2:
+            new_arr.append(i)
+    return np.array(new_arr)
+
+
+result = array_intersection(x1, x2)
+
+
+print(result)  
+print(type(result))
