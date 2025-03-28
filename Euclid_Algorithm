@@ -1,0 +1,13 @@
+def Euclid_gcd(m, n):
+    if n == 0: 
+        return m
+    else:
+        return Euclid_gcd(n, m % n)
+
+
+n = int(input("Enter the n value: "))
+m = int(input("Enter the m value: "))
+
+
+
+print(f"The GCD of {m} and {n} is: {Euclid_gcd(m, n)}")
