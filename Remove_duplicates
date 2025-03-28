@@ -1,0 +1,14 @@
+import numpy as np
+x = np.array([3, 4, 6, 8,8, 9, 2, 5, 7])
+type(x)
+
+def remove_duplicates(x):
+    new_arr=[]
+    for i in x:
+        if i not in new_arr:
+            new_arr.append(i)
+    return new_arr
+
+    
+result=remove_duplicates(x)
+print(result)
