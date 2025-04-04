@@ -1,0 +1,74 @@
+
+class Node:
+    def _init_(self,data=None,next=None):
+        self.data=data
+        self.next=next
+class Circular_Queue:
+    def _init_(self):
+        self.tail=None
+    def isempty(self):
+        return self.tail is None
+    def enqueue(self,NewData):
+        newNode=Node(NewData,None)
+        if self.tail is None:
+            newNode.next=newNode
+        else:
+            newNode.next=self.tail.next
+            self.tail.next=newNode
+        self.tail=newNode
+    def peek(self):
+        return self.tail.next.data
+    def dequeue(self):
+        frontnode=self.tail.next
+        if frontNode.next==frontNode:
+            self.tail=None
+        else:
+            self.tail.next=frontNode.next
+        return frontNode.data
+    def display(self):
+        if self.isempty():
+            print("Queue is empty")
+            return
+        curNode=self.tail.next
+        while curNode !=self.tail:
+            print(curNode.data,end="->")
+            curNode=curNode.next
+        print(curNode.data)
+
+q=Circular_Queue()
+while True:
+    print("\n\nProgram to implement circular queue")
+    print("1. Enqueue")
+    print('2.dequeue')
+    print('3.peek')
+    print('4. Display')
+    print('5.Exit')
+    choice=int(input("Enter ur choice"))
+    if choice==1:
+        num=int(input("Enter the data"))
+        q.enqueue(num)
+    elif choice==2:
+        if q.isempty():
+            print("Queue is empty")
+        else:
+            num=q.dequeue()
+            print("item deleted ",num)
+    elif choice==3:
+        if q.isempty():
+            print("Queue underflow")
+        else:
+            num=q.peek()
+            print("item in the front view ",num)
+    elif choice==4:
+        if q.isempty():
+            print("Queue is empty")
+        else:
+            q.display()
+    elif choice ==5:
+        print("Quitting....")
+        break
+    else:
+        print("Invalid choice sahi number dal be")
+        continue
+
+
